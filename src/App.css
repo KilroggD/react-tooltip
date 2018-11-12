@@ -1,32 +1,65 @@
-.App {
+.app, .event-msg {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.app__welcome-msg {
+    margin-top: 120px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app__action, .event-msg {
+    margin-top: 80px;
 }
 
-.App-link {
-  color: #61dafb;
+.hidden {
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tooltip-target{
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    width: 190px;
+    background-color: black;
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 30%;
+    margin-left: -80px;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip__content {
+    margin-top: -5px;
+}
+
+.tooltip__header {
+  font-weight: bold;
+}
+
+.tooltip__close-btn {
+  position: absolute;
+  right: 2px;
+  top: 4px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  background: transparent;
+  border: none;
 }

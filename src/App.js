@@ -1,25 +1,48 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import Homepage from './homepage.react-component';
+import TooltipManager from './tooltips/tooltip-manager.react-component';
+
 import './App.css';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentStepName: null,
+    };
+  }
+
+  firstAction = () => {
+    this.setState({ currentStepName: null });
+    setTimeout(() => {
+        this.setState({ currentStepName: 'event' });
+        document.querySelector('#event-message').classList.remove('hidden');
+    }, 500);
+  }
+
+  componentDidMount() {
+    this.setState({ currentStepName: 'welcome' });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.currentStepName === 'welcome' && this.state.currentStepName === null) {
+        return this.setState({ currentStepName: 'first_action' });
+    }
+  }
+
+    onTooltipClose = () => {
+        this.setState({
+            currentStepName: null,
+        });
+    }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="app">
+          <Homepage currentStepName={ this.state.currentStepName } onClick={ this.firstAction } />
+          <TooltipManager currentTooltip={ this.state.currentStepName } onTooltipClose={ this.onTooltipClose } />
       </div>
     );
   }
