@@ -15,7 +15,6 @@ class App extends Component {
   }
 
   firstAction = () => {
-    this.setState({ currentStepName: null });
     setTimeout(() => {
         this.setState({ currentStepName: 'event' });
         document.querySelector('#event-message').classList.remove('hidden');
