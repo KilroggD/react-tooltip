@@ -40,8 +40,11 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-          <Homepage currentTooltipName={ this.state.currentTooltipName } onClick={ this.firstAction } />
-          <TooltipManager currentTooltip={ this.state.currentTooltipName } onTooltipClose={ this.onTooltipClose } />
+          <Homepage onClick={ this.firstAction } />
+          <TooltipManager
+              currentTooltip={ this.state.currentTooltipName }
+              onTooltipClose={ this.onTooltipClose }
+          />
       </div>
     );
   }
