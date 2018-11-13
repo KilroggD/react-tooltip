@@ -2,7 +2,8 @@
   text-align: center;
 }
 
-.app__welcome-msg {
+.welcome-msg {
+    text-align: center;
     margin-top: 120px;
 }
 
