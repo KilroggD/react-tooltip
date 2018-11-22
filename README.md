@@ -1,4 +1,5 @@
 Simple tutrorial for React 16 Portal usage to illustrate my Medium blog article
+https://levelup.gitconnected.com/using-react-16-portals-to-build-a-global-ux-tooltip-management-application-f6389f24c1a7
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
